@@ -2,7 +2,7 @@
 
 This repository houses sample code demonstrating how to access and analyze NI4AI data.
 
-To sign up for a login, visit [ni4ai.org](ni4ai.org). It's free!
+To sign up for a login, visit [ni4ai.org](https://ni4ai.org/info). It's free!
 
 ## About NI4AI 
 NI4AI is short for A **N**ational **I**nfrastructure for **AI** on the Grid.
