@@ -44,7 +44,7 @@ https://blog.ni4ai.org/post/2100-01-01-datasets/
 # Jupyter Notebooks
 Each of the jupyter notebooks here is accompanied with a blog post. You'll find the posts here:
 
-- Exploring Analysis of Sunshine Data ([here](https://blog.ni4ai.org/post/2020-03-30-sunshine-data/))
+- Exploring Sunshine Data ([here](https://blog.ni4ai.org/post/2020-03-30-sunshine-data/))
 - Voltage Sag Exploration ([here](https://blog.ni4ai.org/post/2020-04-15-voltage-sags/))
 - Phasor Calculation ([here](https://blog.ni4ai.org/post/2020-07-30-what-is-the-angle/))
 
