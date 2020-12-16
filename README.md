@@ -34,6 +34,9 @@ Once you clone the repository, you can install the requirements by running:
 pip install -r requirements.txt
 ```
 
+Here's a link to the [btrdb documentation](https://btrdb.readthedocs.io/en/latest/api/utils-timez.html). 
+On our blog, you might find it useful to read about [the structure of the database](https://blog.ni4ai.org/post/2019-12-12-btrdb-explained/), and about [how to use that structure](https://blog.ni4ai.org/post/2020-02-14-btrdb-queries-pt2/) to help you write efficient code.
+
 # Data Sets
 A complete list of data sets hosted in the platform is available on our blog. 
 The Jupyter notebooks in this repository can be adapted to run different datasets by changing the "collection".
