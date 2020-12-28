@@ -4,3 +4,4 @@ pandas
 tabulate
 sklearn
 matplotlib
+pyyaml
