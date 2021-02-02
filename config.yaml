@@ -1,3 +1,4 @@
+
 connection:
 # btrdb connection info
     api_key: 'YOUR_API_KEY'
