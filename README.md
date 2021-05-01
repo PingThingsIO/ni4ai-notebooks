@@ -64,7 +64,10 @@ We'll be posting skeleton code to get you started with the exercises
 
 # Continued Learning
 
-We're compiling a list of resources that are available to you if you want to dig further into phasors and time series data analysis.
-Read more about it on our blog.
-
-https://blog.ni4ai.org/post/2020-07-31-expertise-for-expert/
+We've hosted a series of workshops about the data and platform. Here are a few videos that will help you get started:
+- Working with sensor data in Python https://youtu.be/4A4lcQyYMMc
+- Voltage sag detection https://youtu.be/3KjhI8wucKw
+- Working with phase angle data https://youtu.be/oNAPNDo0vBw
+- Intro to PMU Data https://youtu.be/qRAPYVtC2zM
+- Intro to PMU Applications https://youtu.be/RwIh6-dSpfE
+- Intro to Artificial Intelligence https://youtu.be/bagZhgj2GAI
