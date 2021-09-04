@@ -8,7 +8,7 @@ To sign up for a login, visit [ni4ai.org](https://ni4ai.org/info). It's free!
 NI4AI is short for A **N**ational **I**nfrastructure for **AI** on the Grid.
 We're a three-year ARPA-E initiative designed to enable breakthroughs in data analytics for the grid.
 
-In the past, limited data access has created barriers to advancing the analytical capabilities of the industry. 
+In the past, limited data access has created barriers to advancing what it is possible to do with energy data. 
 NI4AI is geared at catalyzing the rapid development and deployment of AI tools to improve every aspect of the grid. 
 The project is taking a three pronged approach:
 
@@ -16,9 +16,9 @@ The project is taking a three pronged approach:
 2. **The data** captures different aspects of grid behavior relevant to developing analytical tools to address problems on the grid.
 3. **The community** includes data analysts and practitioners working to find new opportunities for data to solve practical problems for utilities.
 
-The project is led by a tech startup, PingThings, and leverages a platform they developed called PredictiveGrid<sup>TM</sup>. 
-The platform is used in production by utilities and by researchers, and is being available through NI4AI to make it easier for a broader community of data analysts to work with large volumes of data. 
-The University of California, Berkeley is also a collaborator, and is developing educational content and tutorials to demonstrate different techniques analysts can use to get started.
+The project is led by a tech startup, PingThings, and leverages their PredictiveGrid<sup>TM</sup> platform. 
+The platform enables analysts from any area of expertise to visualize and analyze time series data at scale. It is used in production by utilities and by researchers to enable data exploration, visualization, event analysis, and machine learning on high-frequency sensor data. 
+The University of California, Berkeley is a collaborator on the project.
 
 # Getting Started
 
@@ -26,7 +26,7 @@ Here's a blog post that will show you where to find your API key, and how to get
 
 https://blog.ni4ai.org/post/2020-07-29-demo-2/
 
-We've included a file requirements.txt with a list of python packages you'll need to install to run these notebooks.
+This github repository includes We've included a file requirements.txt with a list of python packages you'll need to install to run these notebooks.
 Some (but not all) of these come standard issue with anaconda.
 Once you clone the repository, you can install the requirements by running:
 
@@ -38,11 +38,10 @@ Here's a link to the [btrdb documentation](https://btrdb.readthedocs.io/en/lates
 On our blog, you might find it useful to read about [the structure of the database](https://blog.ni4ai.org/post/2019-12-12-btrdb-explained/), and about [how to use that structure](https://blog.ni4ai.org/post/2020-02-14-btrdb-queries-pt2/) to help you write efficient code.
 
 # Data Sets
-A complete list of data sets hosted in the platform is available on our blog. 
-The Jupyter notebooks in this repository can be adapted to run different datasets by changing the "collection".
+A complete list of data sets hosted in the platform is available on https://ni4ai.org/datasets. 
+The Jupyter notebooks in this repository can be adapted to run different datasets by changing the collection.
 Note that you may need to adjust the date range as well, as not all datasets span the same time intervals.
 
-https://blog.ni4ai.org/post/2100-01-01-datasets/
 
 # Jupyter Notebooks
 Each of the jupyter notebooks here is accompanied with a blog post. You'll find the posts here:
@@ -51,16 +50,6 @@ Each of the jupyter notebooks here is accompanied with a blog post. You'll find 
 - Voltage Sag Exploration ([here](https://blog.ni4ai.org/post/2020-04-15-voltage-sags/))
 - Phasor Calculation ([here](https://blog.ni4ai.org/post/2020-07-30-what-is-the-angle/))
 
-
-# Exercises
-We've designed a suite of exercises (also on our blog) which are designed to get you started asking questions of data.
-We'll be posting skeleton code to get you started with the exercises
-
-- Counting tap changer operations ([here](https://blog.ni4ai.org/post/2020-10-19-tap-change/))
-- Phase imbalance ([here](https://blog.ni4ai.org/post/2020-10-19-phase-imbalance/))
-- Data quality assessment ([here](https://blog.ni4ai.org/post/2020-10-19-data-quality/))
-- Filtering frequency ([here](https://blog.ni4ai.org/post/2020-10-19-frequency-filters/))
-- Locating disturbances ([here](https://blog.ni4ai.org/post/2020-10-19-locating-disturbances/))
 
 # Continued Learning
 
