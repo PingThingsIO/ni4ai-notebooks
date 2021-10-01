@@ -1,4 +1,0 @@
-connection:
-# btrdb connection info
-    api_key: 'YOUR_API_KEY'
-    api_url: 'api.ni4ai.org:4411'
