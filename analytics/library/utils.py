@@ -12,36 +12,36 @@ def describe_streams(streams):
     return tabulate(table, headers="firstrow")
 
 
-def stream_to_df(stream, start, end, pw=None, width=None, depth=None, agg=None, 
-                  to_datetime=False):  
-    if agg != None:
-        agg = agg = list(set(agg))
-        if agg == 'all':
-            agg = ['min','mean','max', 'count', 'stddev']
-    else:
-        # if the user doesn't pass in a list of args 
-        agg = ['value']
+# def stream_to_df(stream, start, end, pw=None, width=None, depth=None, agg=None, 
+#                   to_datetime=False):  
+#     if agg != None:
+#         agg = agg = list(set(agg))
+#         if agg == 'all':
+#             agg = ['min','mean','max', 'count', 'stddev']
+#     else:
+#         # if the user doesn't pass in a list of args 
+#         agg = ['value']
         
-    if 'time' not in agg : 
-        agg.append('time')
+#     if 'time' not in agg : 
+#         agg.append('time')
         
         
-    if pw is not None:
-        points, _ = zip(*stream.aligned_windows(start=start, end=end, pointwidth=pw))
-    elif (width is not None) and (depth is not None):
-        points, _ = zip(*stream.windows(start=start, end=end, width=width, depth=depth))
-    else:
-        points, _ = zip(*stream.values(start=start,end=end))
+#     if pw is not None:
+#         points, _ = zip(*stream.aligned_windows(start=start, end=end, pointwidth=pw))
+#     elif (width is not None) and (depth is not None):
+#         points, _ = zip(*stream.windows(start=start, end=end, width=width, depth=depth))
+#     else:
+#         points, _ = zip(*stream.values(start=start,end=end))
 
 
-    data = [tuple(getattr(point,a) for a in agg) for point in points] 
-    streams_df = pd.DataFrame(data, columns = agg)
-    streams_df = streams_df.set_index('time', drop=True)
+#     data = [tuple(getattr(point,a) for a in agg) for point in points] 
+#     streams_df = pd.DataFrame(data, columns = agg)
+#     streams_df = streams_df.set_index('time', drop=True)
     
-    if to_datetime:
-        streams_df.index = pd.to_datetime(streams_df.index)
+#     if to_datetime:
+#         streams_df.index = pd.to_datetime(streams_df.index)
         
-    return streams_df
+#     return streams_df
 
 
 def streams_to_df(streams, start, end, pw=None, width=None, depth=None, agg=None, 
@@ -87,7 +87,7 @@ def streams_to_df(streams, start, end, pw=None, width=None, depth=None, agg=None
 
 # Converts pointwidths to seconds
 def seconds2pointwidth(seconds):
-    return np.log(1e9*seconds) / np.log(2); 
+    return np.log(1e9*seconds) / np.log(2) 
 
 
 # Returns the mean value of a stream. Useful for automatically getting the 
@@ -107,7 +107,7 @@ def get_global_mean_value(stream, pw=55, version=0):
 
 # Gets window of data around point
 def get_event(stream, event_time, window_in_sec = 0.5, version=0):
-    window_in_nanosec = 1e9 * window_in_sec; 
+    window_in_nanosec = 1e9 * window_in_sec 
     raw_points, _ = zip(*stream.values(event_time-window_in_nanosec, 
                                        event_time+window_in_nanosec, 
                                        version)) 
