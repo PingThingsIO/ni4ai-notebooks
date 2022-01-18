@@ -3,8 +3,10 @@ import numpy as np
 import pandas as pd
 from tabulate import tabulate
 from tqdm.auto import tqdm 
+from btrdb.utils.general import pointwidth
+from btrdb.utils.timez import ns_delta
 
-#Retrieving Stream Data
+
 def describe_streams(streams):
     """
     This function prints streams info("Collection", "Name", "Units", "UUID") in tabular format.
@@ -157,39 +159,6 @@ def get_streamset(conn, collection_name, return_metadata=False, return_uuid=Fals
     streams_metadata = conn.streams(*[s['uuid'] for s in streams_metadata])
     
     return streams_metadata
-
-
-
-# def stream_to_df(stream, start, end, pw=None, width=None, depth=None, agg=None, 
-#                   to_datetime=False):  
-#     if agg != None:
-#         agg = agg = list(set(agg))
-#         if agg == 'all':
-#             agg = ['min','mean','max', 'count', 'stddev']
-#     else:
-#         # if the user doesn't pass in a list of args 
-#         agg = ['value']
-        
-#     if 'time' not in agg : 
-#         agg.append('time')
-        
-        
-#     if pw is not None:
-#         points, _ = zip(*stream.aligned_windows(start=start, end=end, pointwidth=pw))
-#     elif (width is not None) and (depth is not None):
-#         points, _ = zip(*stream.windows(start=start, end=end, width=width, depth=depth))
-#     else:
-#         points, _ = zip(*stream.values(start=start,end=end))
-
-
-#     data = [tuple(getattr(point,a) for a in agg) for point in points] 
-#     streams_df = pd.DataFrame(data, columns = agg)
-#     streams_df = streams_df.set_index('time', drop=True)
-    
-#     if to_datetime:
-#         streams_df.index = pd.to_datetime(streams_df.index)
-        
-#     return streams_df
 
 
 def streams_to_df(streams, start, end, pw=None, width=None, depth=None, agg=None, 
@@ -377,15 +346,6 @@ def get_global_mean_value(stream, pw=55, version=0):
     # use np.mean() to ensure only 1 overall mean of all statspoints being returned
     sps_mean = np.mean([sp.mean for sp in statpoints])
     return sps_mean
-
-# # Gets window of data around point
-# def get_event(stream, event_time, window_in_sec = 0.5, version=0):
-#     window_in_nanosec = 1e9 * window_in_sec 
-#     raw_points, _ = zip(*stream.values(event_time-window_in_nanosec, 
-#                                        event_time+window_in_nanosec, 
-#                                        version)) 
-#     values = [raw_point[1] for raw_point in raw_points]
-#     return values
 
 
 def get_event_data(stream, event_time, window_in_sec_left = 0.5, window_in_sec_right=0.5, version=0,
