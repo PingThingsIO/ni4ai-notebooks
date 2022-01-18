@@ -180,14 +180,15 @@ def streams_to_df(streams, start, end, pw=None, width=None, depth=None, agg=None
         Width used to query data using windows().
     depth : int, default=None
         Depth used to query data using windows(). 
-    agg : str,[str] default=None
+    agg : [str] default=None
         Aggregates to use when using aligned_windows() or windows(). 
-        The aggreates that can be used are : ['min','mean','max', 'count', 'stddev'].
-        If agg='all', all the aggregates in the list above will ne returned.
+        The aggregates that can be used are : ['min','mean','max','count','stddev']. 
+        If only one aggregate is specified, make sure it is put in a list as such : ['mean'].
+        If agg is not specified, all the aggregates in the list above will be used.
    to_datetime : bool, default=False
         Return the timestamps as datetime instead of nanoseconds.
    disable_progress_bar : bool, default=False
-        Disable progress bar when querying data.
+        Disable progress bar when querying data when set True.
     
     Returns 
     ----------
@@ -199,12 +200,15 @@ def streams_to_df(streams, start, end, pw=None, width=None, depth=None, agg=None
     ----------
     >>> data = streams_to_df(streamset, start_time, end_time, pw=26, agg=['mean'], to_datetime=True)
     """     
-    if agg != None:
-        agg = agg = list(set(agg))
-        if agg == 'all':
+    if depth is not None and width is None:
+        raise ValueError('width must be specified with depth when using windows().')
+    
+    if pw is not None or width is not None:
+        if agg is not None: 
+            agg = list(set(agg))
+        else :
             agg = ['min','mean','max', 'count', 'stddev']
-    else:
-        # if the user doesn't pass in a list of args 
+    else : 
         agg = ['value']
         
     if 'time' not in agg : 
